@@ -3,9 +3,9 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+	selector: 'app-menu',
+	templateUrl: './menu.component.html',
+	styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
 
@@ -16,14 +16,18 @@ export class MenuComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this._authService.isAuthenticated.subscribe(res => this.isLoggedin = res)
+		this._authService.isAuthenticated.subscribe(res => this.isLoggedin = res);
+
+		if (this._router.url === "/") {
+			this._router.navigate(['dashborad'])
+		}
 	}
 
 	logout() {
 		this._authService.logout()
 		this._router.navigate(['/sign-in']);
 	}
-	
-	
-  
+
+
+
 }

@@ -15,7 +15,7 @@ const childRoutes: Routes = [
 ]
 
 const appRouters: Routes = [
-	{ path: '', component: MenuComponent, children: childRoutes },
+	{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
 	{ path: 'sign-in', component: SignInComponent },
 	{ path: '**', component: PageNotFoundComponent }
 ]
