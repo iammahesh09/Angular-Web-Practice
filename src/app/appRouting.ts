@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 const appRouters:Routes = [
 { path: '', component: HomeComponent },
 { path: 'products-list', component: ProductsComponent },
-{ path: 'sign-in', component: SigninComponent }
+{ path: 'sign-in', component: SignInComponent }
 ]
 
 @NgModule({
