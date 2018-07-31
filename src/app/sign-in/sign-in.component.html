@@ -15,7 +15,10 @@
         <span class="text-danger" *ngIf="password.touched &&
 					password.errors?.required">password required</span>
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" (click)="userLogin()">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid" (click)="userLogin()">Submit</button>
+
+      <button type="button" class="btn btn-link float-right" routerLink="/sign-up">SignUp</button>
+
     </form>
   </div>
 </section>

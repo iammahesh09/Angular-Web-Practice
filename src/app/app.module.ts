@@ -12,6 +12,7 @@ import { ProductsComponent } from './products/products.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuComponent } from './menu/menu.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenuComponent } from './menu/menu.component';
     ProductsComponent,
     SignInComponent,
     PageNotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

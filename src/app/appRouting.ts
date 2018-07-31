@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuComponent } from './menu/menu.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const childRoutes: Routes = [
 	{ path: 'dashborad', component: HomeComponent },
@@ -17,6 +18,7 @@ const childRoutes: Routes = [
 const appRouters: Routes = [
 	{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
 	{ path: 'sign-in', component: SignInComponent },
+	{ path: 'sign-up', component: SignUpComponent },
 	{ path: '**', component: PageNotFoundComponent }
 ]
 
