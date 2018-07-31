@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
 				this.loginError = true;
 				this.loginResultMsg = "Successfully login"
 				this._authService.saveToken(res["token"])
-				this._router.navigate(["/"]);
+				this._router.navigate(["/dashborad"]);
 			},
 			error => {
 				this.loginResult = true;
