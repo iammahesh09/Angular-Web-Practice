@@ -27,6 +27,7 @@ export class AuthService {
 
   isLoggedin() {
     return !!localStorage.getItem("token");
+    
   }
 
   logout() {
