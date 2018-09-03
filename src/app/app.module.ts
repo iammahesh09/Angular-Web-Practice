@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
+import { BooklistComponent } from './books/booklist/booklist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddProductComponent } from './products/add-product/add-product.componen
     PageNotFoundComponent,
     MenuComponent,
     SignUpComponent,
-    AddProductComponent
+    AddProductComponent,
+    BooklistComponent
   ],
   imports: [
     BrowserModule,

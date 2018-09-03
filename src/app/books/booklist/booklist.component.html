@@ -1,0 +1,21 @@
+<section>
+  <div class="card mb-2 mt-2" *ngFor="let book of books">
+    <div class="card-header bold">
+      {{book.Title}}
+    </div>
+    <div class=" card-body">
+      <p><span class="bold">Description : </span>{{book.Description}}</p>
+      <p><span class="bold">Excerpt : </span>{{book.Excerpt}}</p>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col">
+          <span class="bold">PageCount : </span>{{book.PageCount}}
+        </div>
+        <div class="col">
+          <span class="bold">PublishDate : </span>{{book.PublishDate}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

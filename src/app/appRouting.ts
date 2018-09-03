@@ -10,24 +10,26 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
+import { BooklistComponent } from './books/booklist/booklist.component';
 
 const childRoutes: Routes = [
-{ path: 'dashborad', component: HomeComponent },
-{ path: 'products-list', component: ProductsComponent },
-{ path: 'add-product', component: AddProductComponent }
+	{ path: 'dashborad', component: HomeComponent },
+	{ path: 'products-list', component: ProductsComponent },
+	{ path: 'add-product', component: AddProductComponent },
+	{ path: 'books', component: BooklistComponent }
 ]
 
 const appRouters: Routes = [
-{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
-{ path: 'sign-in', component: SignInComponent },
-{ path: 'sign-up', component: SignUpComponent },
-{ path: '**', redirectTo:'/'}
+	{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
+	{ path: 'sign-in', component: SignInComponent },
+	{ path: 'sign-up', component: SignUpComponent },
+	{ path: '**', redirectTo: '/' }
 ]
 
 
 @NgModule({
 	imports: [
-	RouterModule.forRoot(appRouters)
+		RouterModule.forRoot(appRouters)
 	],
 	exports: [RouterModule]
 
