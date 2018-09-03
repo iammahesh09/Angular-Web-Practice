@@ -9,7 +9,7 @@ export class SignupService {
 
   constructor(private _http: HttpClient, private _authService: AuthService) { }
 
-  rsgUrl: string = "https://mobile-products.herokuapp.com/api/users/register";
+  rsgUrl: string = "http://localhost:9001/api/users/register";
 
   signup(userData: User) {
     return this._http.post(this.rsgUrl, userData)

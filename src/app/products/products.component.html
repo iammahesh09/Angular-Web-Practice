@@ -1,22 +1,23 @@
 <h2 class="text-center">Products List</h2>
+<button type="button" class="btn btn-primary btn-sm m-3" routerLink="/add-product">Add New Product</button>
 <div class="row">
 
   <div class="col-md-4" *ngFor="let product of products">
     <div class="card">
       <div class="card-header">
-        <h4>{{product.brand|uppercase}}
-          <small>{{product.model}}</small>
-        </h4>
+        <img src="{{product.modelImage}}" class="img-fluid card-img-top">
       </div>
       <div class="card-body">
+        <h4>{{product.brand|uppercase}}
+          <small class="badge badge-primary badge-pill">{{product.model}}</small>
+        </h4>
+      </div>
+      <div class="card-footer">
         <p>Price :
           <strong>{{product.price | currency}}</strong>
         </p>
-        <br/>
-      </div>
-      <div class="card-footer">
-
       </div>
     </div>
+    <br/>
   </div>
 </div>

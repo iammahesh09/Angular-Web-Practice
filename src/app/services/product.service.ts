@@ -12,7 +12,12 @@ export class productService {
 
   getProductData() {
     var hder = { 'authorization': this._authService.getToken() };
-    return this._http.get<Product[]>("https://mobile-products.herokuapp.com/api/products/", { headers: hder })
+    return this._http.get<Product[]>("http://localhost:9001/api/products/", { headers: hder })
+  }
+
+  saveProduct(data) {
+    var hder = { 'authorization': this._authService.getToken() };
+    return this._http.post<Product[]>("http://localhost:9001/api/products/", data, { headers: hder })
   }
 
 

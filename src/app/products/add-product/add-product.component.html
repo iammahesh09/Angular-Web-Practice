@@ -1,0 +1,74 @@
+<h1 class="text-center">
+
+  Add New Product</h1>
+<div class="alert alert-success" *ngIf="isSuccess">Successfuly Save Product</div>
+<div class="alert alert-danger" *ngIf="isError">Product Not Save </div>
+<div class="col-lg-8 offset-lg-2">
+  <form novalidate #newProduct="ngForm">
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Brand</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" minlength="2" placeholder="Brand" name="brand" [(ngModel)]="_product.brand" #brand="ngModel"
+          required>
+        <span class="text-danger" *ngIf="brand.dirty && brand.errors?.required">Required</span>
+        <span class="text-danger" *ngIf="brand.dirty &&
+          brand.errors?.minlength">Min 2 Char</span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Model</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Model" [(ngModel)]="_product.model" name="model" #model="ngModel" required>
+        <span class="text-danger" *ngIf="model.dirty &&
+          model?.errors?.required">Required</span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Price</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" placeholder="Price" pattern="[0-9]{3,6}" [(ngModel)]="_product.price" name="price"
+          #price="ngModel" required>
+        <span class="text-danger" *ngIf="price.dirty &&
+          price?.errors?.required">Required</span>
+        <span class="text-danger" *ngIf="price.dirty && price?.errors?.pattern">invalid Price
+        </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">File</label>
+      <div class="col-sm-10">
+        <input type="file" class="form-control" placeholder="Image" [(ngModel)]="_product.modelImage" name="modelImage" #modelImage="ngModel">
+      </div>
+    </div>
+
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">inStock</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" [(ngModel)]="_product.inStock" name="inStock" value="true" checked>
+            <label class="form-check-label" for="gridRadios1">
+              True
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" [(ngModel)]="_product.inStock" name="inStock" value="false">
+            <label class="form-check-label" for="gridRadios2">
+              False
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" (click)="addProduct()" [disabled]="newProduct.invalid" class="btn btn-primary">Add Product</button>
+        <button type="button" class="btn btn-info float-right" routerLink="/products-list">Goto Product List</button>
+      </div>
+    </div>
+  </form>
+</div>
