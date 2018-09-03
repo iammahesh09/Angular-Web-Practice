@@ -11,12 +11,16 @@ import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { BooklistComponent } from './books/booklist/booklist.component';
+import { MovieslistComponent } from './movies/movieslist/movieslist.component';
+import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 
 const childRoutes: Routes = [
 	{ path: 'dashborad', component: HomeComponent },
 	{ path: 'products-list', component: ProductsComponent },
 	{ path: 'add-product', component: AddProductComponent },
-	{ path: 'books', component: BooklistComponent }
+	{ path: 'books', component: BooklistComponent },
+	{ path: 'movies', component: MovieslistComponent },
+	{ path: 'movies/:imdbID', component: MovieDetailsComponent }
 ]
 
 const appRouters: Routes = [

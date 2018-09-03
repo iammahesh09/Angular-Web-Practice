@@ -1,0 +1,43 @@
+<section>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <img [src]="movie.Poster" alt="{{movie.Title}}" class="img-fluid">
+        </div>
+        <div class="col-sm-8">
+          <h4 class="card-title">{{movie.Title}}</h4>
+          <p class="card-text">{{movie.Plot}}</p>
+          <div [hidden]="!movie.Director">
+            <p><span class="bold">Actors : </span>{{movie.Actors}}</p>
+          </div>
+          <div [hidden]="!movie.Director">
+            <p><span class="bold">Director : </span>{{movie.Director}}</p>
+          </div>
+          <div [hidden]="!movie.Genre">
+            <p><span class="bold">Genre : </span>{{movie.Genre}}</p>
+          </div>
+          <div [hidden]="!movie.Language">
+            <p><span class="bold">Language : </span>{{movie.Language}} </p>
+          </div>
+          <div [hidden]="!movie.Country">
+            <p><span class="bold">Country : </span>{{movie.Country}}</p>
+          </div>
+          <div [hidden]="!movie.Writer">
+            <p><span class="bold">Writer : </span>{{movie.Writer}}</p>
+          </div>
+          <div [hidden]="!movie.Website">
+            <p>
+              <span class="bold">Website :</span>
+              <a href="{{movie.Website}}" class="btn btn-link" target="_blank">{{movie.Title}}</a>
+            </p>
+          </div>
+          <div [hidden]="!movie.Year">
+            <p><span class="bold">Year :</span> {{movie.Year}}</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
