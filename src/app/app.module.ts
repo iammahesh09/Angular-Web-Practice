@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './appRouting';
@@ -22,6 +22,8 @@ import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
 import { MembersComponent } from './DataTable/members/members.component';
+import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
+import { FormsComponent } from './Forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MembersComponent } from './DataTable/members/members.component';
     MovieslistComponent,
     MovieDetailsComponent,
     MemberListComponent,
-    MembersComponent
+    MembersComponent,
+    ReactiveFormsComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { MembersComponent } from './DataTable/members/members.component';
     FormsModule,
     Ng2SmartTableModule,
     HttpClientModule,
-    DataTableModule
+    DataTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

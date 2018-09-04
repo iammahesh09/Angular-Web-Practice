@@ -14,6 +14,8 @@ import { BooklistComponent } from './books/booklist/booklist.component';
 import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
+import { FormsComponent } from './Forms/forms.component';
+import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
 
 const childRoutes: Routes = [
 	{ path: 'dashborad', component: HomeComponent },
@@ -22,7 +24,13 @@ const childRoutes: Routes = [
 	{ path: 'books', component: BooklistComponent },
 	{ path: 'movies', component: MovieslistComponent },
 	{ path: 'movies/:imdbID', component: MovieDetailsComponent },
-	{ path: 'member-list', component: MemberListComponent }
+	{ path: 'member-list', component: MemberListComponent },
+	{
+		path: 'forms', component: FormsComponent, children: [
+			{ path: '', redirectTo: 'ReactiveForms', pathMatch: 'full' },
+			{ path: 'ReactiveForms', component: ReactiveFormsComponent }
+		]
+	}
 ]
 
 const appRouters: Routes = [
