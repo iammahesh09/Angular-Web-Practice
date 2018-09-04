@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './appRouting';
 
+import { DataTableModule } from "angular-6-datatable";
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +19,7 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { BooklistComponent } from './books/booklist/booklist.component';
 import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { MemberListComponent } from './DataTable/member-list/member-list.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +34,15 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     AddProductComponent,
     BooklistComponent,
     MovieslistComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MemberListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
