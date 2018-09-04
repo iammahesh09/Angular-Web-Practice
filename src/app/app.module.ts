@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './appRouting';
 
 import { DataTableModule } from "angular-6-datatable";
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -20,6 +21,7 @@ import { BooklistComponent } from './books/booklist/booklist.component';
 import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
+import { MembersComponent } from './DataTable/members/members.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { MemberListComponent } from './DataTable/member-list/member-list.compone
     BooklistComponent,
     MovieslistComponent,
     MovieDetailsComponent,
-    MemberListComponent
+    MemberListComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    Ng2SmartTableModule,
     HttpClientModule,
     DataTableModule
   ],
