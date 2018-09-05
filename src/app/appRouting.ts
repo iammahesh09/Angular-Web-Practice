@@ -36,8 +36,11 @@ const childRoutes: Routes = [
 ]
 
 const appRouters: Routes = [
-	//{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
-	{ path: '', loadChildren: './lazy/lazy.module#LazyModule' },
+	{ path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
+
+	// Basic Lazy Module
+	// { path: '', loadChildren: './lazy/lazy.module#LazyModule' },
+
 	{ path: 'sign-in', component: SignInComponent },
 	{ path: 'sign-up', component: SignUpComponent },
 	{ path: '**', redirectTo: '/' }
