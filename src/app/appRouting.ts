@@ -14,9 +14,6 @@ import { BooklistComponent } from './books/booklist/booklist.component';
 import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
-import { FormsComponent } from './Forms/forms.component';
-import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
-import { BasicFormComponent } from './Forms/basic-form/basic-form.component';
 
 const childRoutes: Routes = [
 	{ path: 'dashborad', component: HomeComponent },
@@ -26,13 +23,7 @@ const childRoutes: Routes = [
 	{ path: 'movies', component: MovieslistComponent },
 	{ path: 'movies/:imdbID', component: MovieDetailsComponent },
 	{ path: 'member-list', component: MemberListComponent },
-	{
-		path: 'forms', component: FormsComponent, children: [
-			{ path: '', redirectTo: 'ReactiveForms', pathMatch: 'full' },
-			{ path: 'ReactiveForms', component: ReactiveFormsComponent },
-			{ path: 'BasicForms', component: BasicFormComponent }
-		]
-	}
+	{ path: 'forms', loadChildren: './Forms/forms.lazy.module#FormsLazyModule' }
 ]
 
 const appRouters: Routes = [
@@ -40,7 +31,6 @@ const appRouters: Routes = [
 
 	// Basic Lazy Module
 	// { path: '', loadChildren: './lazy/lazy.module#LazyModule' },
-
 	{ path: 'sign-in', component: SignInComponent },
 	{ path: 'sign-up', component: SignUpComponent },
 	{ path: '**', redirectTo: '/' }

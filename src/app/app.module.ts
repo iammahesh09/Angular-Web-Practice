@@ -22,9 +22,6 @@ import { MovieslistComponent } from './movies/movieslist/movieslist.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
 import { MembersComponent } from './DataTable/members/members.component';
-import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
-import { FormsComponent } from './Forms/forms.component';
-import { BasicFormComponent } from './Forms/basic-form/basic-form.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +39,6 @@ import { BasicFormComponent } from './Forms/basic-form/basic-form.component';
     MovieDetailsComponent,
     MemberListComponent,
     MembersComponent,
-    ReactiveFormsComponent,
-    FormsComponent,
-    BasicFormComponent
   ],
   imports: [
     BrowserModule,
