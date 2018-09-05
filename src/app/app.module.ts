@@ -18,8 +18,6 @@ import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { BooklistComponent } from './books/booklist/booklist.component';
-import { MovieslistComponent } from './movies/movieslist/movieslist.component';
-import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
 import { MembersComponent } from './DataTable/members/members.component';
 
@@ -35,8 +33,6 @@ import { MembersComponent } from './DataTable/members/members.component';
     SignUpComponent,
     AddProductComponent,
     BooklistComponent,
-    MovieslistComponent,
-    MovieDetailsComponent,
     MemberListComponent,
     MembersComponent,
   ],
