@@ -24,6 +24,7 @@ import { MemberListComponent } from './DataTable/member-list/member-list.compone
 import { MembersComponent } from './DataTable/members/members.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
 import { FormsComponent } from './Forms/forms.component';
+import { BasicFormComponent } from './Forms/basic-form/basic-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FormsComponent } from './Forms/forms.component';
     MemberListComponent,
     MembersComponent,
     ReactiveFormsComponent,
-    FormsComponent
+    FormsComponent,
+    BasicFormComponent
   ],
   imports: [
     BrowserModule,

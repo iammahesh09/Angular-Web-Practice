@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
                 <a class="btn btn-md btn-primary btn-block text-white" routerLink="ReactiveForms" routerLinkActive="active">Reactive Form validation</a>
             </div>        
             <div class="col">
-                <a class="btn btn-md btn-info btn-block text-white" routerLink="FormValidation" routerLinkActive="active">Form validation</a>
+                <a class="btn btn-md btn-info btn-block text-white" routerLink="BasicForms" routerLinkActive="active">Form validation</a>
             </div>
         </div>
         <router-outlet></router-outlet>

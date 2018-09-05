@@ -16,6 +16,7 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
 import { FormsComponent } from './Forms/forms.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
+import { BasicFormComponent } from './Forms/basic-form/basic-form.component';
 
 const childRoutes: Routes = [
 	{ path: 'dashborad', component: HomeComponent },
@@ -28,7 +29,8 @@ const childRoutes: Routes = [
 	{
 		path: 'forms', component: FormsComponent, children: [
 			{ path: '', redirectTo: 'ReactiveForms', pathMatch: 'full' },
-			{ path: 'ReactiveForms', component: ReactiveFormsComponent }
+			{ path: 'ReactiveForms', component: ReactiveFormsComponent },
+			{ path: 'BasicForms', component: BasicFormComponent }
 		]
 	}
 ]
