@@ -21,7 +21,8 @@ const childRoutes: Routes = [
 	{ path: 'member-list', component: MemberListComponent },
 
 	{ path: 'movies', loadChildren: './movies/movie.lazy.module#MovieLazyModule' },
-	{ path: 'forms', loadChildren: './Forms/forms.lazy.module#FormsLazyModule' }
+	{ path: 'forms', loadChildren: './Forms/forms.lazy.module#FormsLazyModule' },
+	{ path: 'communication', loadChildren: './shared-components/shared.module#SharedModule' }
 
 ]
 
