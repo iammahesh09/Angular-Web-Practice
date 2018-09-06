@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-child',
@@ -7,21 +8,23 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  childMsg: string;
+  childMsg: any;
 
-  @Input() childMessage: any;
-
-  @Output() bindChildEvent = new EventEmitter<any>()
-
-  constructor() { }
+  constructor(private _sharedService: SharedService) { }
 
   ngOnInit() {
   }
 
-
-  sharedData(data) {
-    console.log("Input Data :" + data);
-    this.bindChildEvent.emit(data)
+  sendMessage(): void {
+    // send message to subscribers via observable subject
+    this._sharedService.SendMsg('Message App!');
   }
+
+  clearMessage(): void {
+    // clear message
+    this._sharedService.ClearMsg();
+  }
+
+
 
 }

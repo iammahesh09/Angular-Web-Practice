@@ -1,17 +1,12 @@
+<div *ngIf="message" class="alert alert-success">{{message.text}}</div>
 <section>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Child Component</h5>
-      <div class="row">
-        <div class="col-sm-10">
-          <input type="text" class="form-control" #childMsg>
-        </div>
-        <div class="col-sm-1">
-          <button class="btn btn-primary btn-md" (click)="sharedData(childMsg.value)">Send</button>
-        </div>
-      </div>
-      <hr>
-      <p class="card-text">{{childMessage}}</p>
+      <h2>Angular 6 Component Communication</h2>
+      <button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+      <button (click)="clearMessage()" class="btn btn-secondary">Clear Message</button>
     </div>
   </div>
 </section>
+
+<hr />

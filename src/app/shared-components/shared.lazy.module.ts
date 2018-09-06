@@ -8,7 +8,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
-  { path: '', component: SharedComponent }
+  { path: '', component: ChildComponent }
 ]
 
 @NgModule({

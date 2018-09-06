@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements OnInit {
+export class ParentComponent implements OnDestroy {
 
-  parentValue: any;
-  childMsg: any;
+  message: any;
+  subscription: Subscription;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private _sharedService: SharedService) {
+    // subscribe messages
+    this.subscription = this._sharedService.getMsg().subscribe(message => { this.message = message; });
+    console.log(this.message.text)
   }
 
-  sharedData(data) {
-    console.log("Input Data :" + data);
-    this.parentValue = data;
-    console.log("Parent Data :" + this.parentValue);
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
   }
-  recevieMsgData($event) {
-    console.log($event)
-    this.childMsg = $event;
-  }
-
 
 }
