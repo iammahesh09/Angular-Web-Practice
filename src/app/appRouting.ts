@@ -22,7 +22,8 @@ const childRoutes: Routes = [
 
 	{ path: 'movies', loadChildren: './movies/movie.lazy.module#MovieLazyModule' },
 	{ path: 'forms', loadChildren: './Forms/forms.lazy.module#FormsLazyModule' },
-	{ path: 'communication', loadChildren: './shared-components/shared.lazy.module#SharedModule' }
+	{ path: 'communication', loadChildren: './shared-components/shared.lazy.module#SharedModule' },
+	{ path: 'directive', loadChildren: './Directives/directives.module#DirectivesLazyModule' }
 
 ]
 
