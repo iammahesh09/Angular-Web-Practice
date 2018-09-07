@@ -20,6 +20,7 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { BooklistComponent } from './books/booklist/booklist.component';
 import { MemberListComponent } from './DataTable/member-list/member-list.component';
 import { MembersComponent } from './DataTable/members/members.component';
+import { AgePipe } from './Pipes/age.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MembersComponent } from './DataTable/members/members.component';
     BooklistComponent,
     MemberListComponent,
     MembersComponent,
+    AgePipe,
   ],
   imports: [
     BrowserModule,

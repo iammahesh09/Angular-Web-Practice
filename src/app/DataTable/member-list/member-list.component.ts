@@ -6,19 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  data: { 'name': string; 'email': string; 'age': string; 'city': string; }[];
+  data: { 'name': string; 'email': string; 'dob': string; 'city': string; }[];
   constructor() { }
 
   ngOnInit() {
     this.data = [
-      { 'name': 'Jaydeep', 'email': 'Jaydeep.tywry@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Ankit', 'email': 'Jaydeep.hsdhsh@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Krunal', 'email': 'Jaydeep.pakainfo@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Milan', 'email': 'Jaydeep.hsfh@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Chirag', 'email': 'Jaydeep.btyj@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Vivek', 'email': 'Jaydeep.pakainfo@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Vihal', 'email': 'Jaydeep.pakainfo@gmail.com', 'age': '26', 'city': 'Rajkot' },
-      { 'name': 'Vijay', 'email': 'Jaydeep.pakainfo@gmail.com', 'age': '26', 'city': 'Rajkot' }
+      { 'name': 'Jaydeep', 'email': 'Jaydeep.tywry@gmail.com', 'dob': '09/07/1985', 'city': 'Mumbai' },
+      { 'name': 'Ankit', 'email': 'Ankit.hsdhsh@gmail.com', 'dob': '05/21/1992', 'city': 'Hyderabad' },
+      { 'name': 'Krunal', 'email': 'Krunal.pakainfo@gmail.com', 'dob': '01/07/1980', 'city': 'Chennai' },
+      { 'name': 'Milan', 'email': 'Milan.hsfh@gmail.com', 'dob': '09/29/1990', 'city': 'Mumbai' },
+      { 'name': 'Chirag', 'email': 'Chirag.btyj@gmail.com', 'dob': '12/18/1972', 'city': 'Mumbai' },
+      { 'name': 'Vivek', 'email': 'Vivek.sdfe@gmail.com', 'dob': '02/06/1945', 'city': 'Pune' },
+      { 'name': 'Vihal', 'email': 'Vihal.dsg@gmail.com', 'dob': '09/12/1960', 'city': 'Pune' },
+      { 'name': 'Vijay', 'email': 'Vijay.fgd@gmail.com', 'dob': '04/30/1999', 'city': 'Chennai' }
     ]
   }
 

@@ -2,17 +2,20 @@
 <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
   <thead>
     <tr>
-      <th style="width: 20%">
+      <th>
         <mfDefaultSorter by="name">MemberName</mfDefaultSorter>
       </th>
-      <th style="width: 50%">
+      <th>
         <mfDefaultSorter by="email">MemberEmail</mfDefaultSorter>
       </th>
-      <th style="width: 10%">
-        <mfDefaultSorter by="age">Age</mfDefaultSorter>
+      <th>
+        <mfDefaultSorter by="age">Date of Birth</mfDefaultSorter>
       </th>
-      <th style="width: 20%">
+      <th>
         <mfDefaultSorter by="city">Member City</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="city">Age</mfDefaultSorter>
       </th>
     </tr>
   </thead>
@@ -20,8 +23,9 @@
     <tr *ngFor="let member of mf.data">
       <td>{{member.name}}</td>
       <td>{{member.email}}</td>
-      <td class="text-right">{{member.age}}</td>
+      <td>{{member.dob | date:"fullDate"}}</td>
       <td>{{member.city | uppercase}}</td>
+      <td>{{member.dob | age }}</td>
     </tr>
   </tbody>
   <tfoot>
