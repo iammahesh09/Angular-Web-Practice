@@ -19,7 +19,6 @@ export class AuthService {
   }
 
   saveToken(token: string) {
-    this.isAuthenticated.next(true);
     return sessionStorage.setItem("token", token)
   }
 
@@ -36,7 +35,13 @@ export class AuthService {
     this._router.navigate(['/sign-in'])
   }
 
-  isAuthenticated: Subject<boolean> = new Subject();
-
+  isAuthenticated(): boolean {
+    const GetToken = sessionStorage.getItem('token');
+    if (GetToken && GetToken.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

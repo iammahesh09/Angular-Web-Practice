@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this._authService.isAuthenticated.subscribe(res => this.isLoggedin = res);
+		//this._authService.isAuthenticated.subscribe(res => this.isLoggedin = res);
 
 		if (this._router.url === "/") {
 			this._router.navigate(['dashborad'])
