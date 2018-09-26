@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +15,20 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router) { }
 
   login(userData: User) {
-    return this._http.post(this.loginUrl, userData)
+    return this._http.post(this.loginUrl, userData);
   }
 
   saveToken(token: string) {
     this.isAuthenticated.next(true);
-    return localStorage.setItem("token", token)
+    return sessionStorage.setItem("token", token)
   }
 
   getToken() {
-    return localStorage.getItem('token')
+    return sessionStorage.getItem('token')
   }
 
   isLoggedin() {
-    return !!localStorage.getItem("token");
-
+    return !!sessionStorage.getItem("token");
   }
 
   logout() {
@@ -37,5 +37,6 @@ export class AuthService {
   }
 
   isAuthenticated: Subject<boolean> = new Subject();
+
 
 }

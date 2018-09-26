@@ -2,30 +2,30 @@
   <div class="col-md-6 offset-md-3 bg-light mt-3 p-3">
     <h2 class="text-uppercase text-center mb-4">User Registation </h2>
     <p *ngIf="alertResult" [class]="alertPop?['alert alert-success']:['alert alert-danger']">{{alertMsg}}</p>
-    <form novalidate #regForm="ngForm">
+    <form novalidate #regForm="ngForm" autocomplete="off">
       <div class="form-group">
-        <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter email" [(ngModel)]="_user.username"
-          name="username" #username="ngModel" required>
+        <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter email"
+          [(ngModel)]="_user.username" name="username" #username="ngModel" required>
         <div *ngIf="username.errors && (username.touched || username.dirty)" class="aler alert-danger">
           <p *ngIf="username.errors.required">Email is required</p>
           <p *ngIf="username.errors?.email && username.errors?.pattern">Invalid pattern</p>
         </div>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="_user.password" name="password" #password="ngModel"
-          required>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="_user.password" name="password"
+          #password="ngModel" required>
         <div *ngIf="password.errors && (password.touched || password.dirty)" class="aler alert-danger">
           <p *ngIf="password.errors.required">Password is required</p>
         </div>
       </div>
-      <!-- <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="_user.repassword" name="repassword" #repassword="ngModel"
-          required>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Re-Password" [(ngModel)]="_user.repassword" name="repassword"
+          #repassword="ngModel" required>
         <div *ngIf="repassword.errors && (repassword.touched || repassword.dirty)" class="aler alert-danger">
           <p *ngIf="repassword.errors.required && repassword.errors?.password ">Confirm Password is required</p>
         </div>
-      </div> -->
-      <!-- <p class="text-danger" *ngIf="password.touched">{{pwdNotMatch}}</p> -->
+      </div>
+      <p class="text-danger" *ngIf="password.touched">{{pwdNotMatch}}</p>
       <button type=" submit " [disabled]="regForm.invalid " class="btn btn-primary " (click)="userReg() ">Submit</button>
       <button type="button " class="btn btn-link float-right" routerLink="/sign-in">SignIn</button>
 

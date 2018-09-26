@@ -9,11 +9,11 @@ import { SignupService } from '../services/signup.service';
 })
 export class SignUpComponent implements OnInit {
 
-  _user: any = []
+  _user: any = {}
   pwdNotMatch: string;
   alertMsg: string;
   alertResult: boolean;
-  alertPop: boolean = false;;
+  alertPop: boolean = false;
 
   constructor(private _signupService: SignupService, private _router: Router) { }
 
@@ -21,32 +21,31 @@ export class SignUpComponent implements OnInit {
   }
 
   userReg() {
-    // let password = this._user.password;
-    // let repassword = this._user.repassword;
-    // if (password == repassword) {
+    let password = this._user.password;
+    let repassword = this._user.repassword;
+    if (password == repassword) {
 
-    console.log(this._user)
+      this.pwdNotMatch = ""
+      this._signupService.signup(this._user.username, this._user.password).subscribe(
+        data => {
+          console.log(data);
+          this.alertPop = true;
+          this.alertResult = true;
+          this.alertMsg = "Registration successful";
+          this._router.navigate(['/sign-in']);
 
-    this._signupService.signup(this._user).subscribe(
-      res => {
-        console.log(res);
-        this._user = {};
-        this.alertPop = true;
-        this.alertResult = true;
-        this.alertMsg = "Registration successful";
-        this._router.navigate(['/sign-in']);
-      },
-      eror => {
-        this.alertPop = false;
-        this.alertResult = true;
-        this.alertMsg = "Registration Not successful";
-        console.log(eror);
-      }
-    )
-    //}
-    //     else {
-    //   this.pwdNotMatch = "Password Not Match"
-    // }
+        },
+        eror => {
+          this.alertPop = false;
+          this.alertResult = true;
+          this.alertMsg = "Registration Not successful";
+          console.log(eror);
+        }
+      )
+    }
+    else {
+      this.pwdNotMatch = "Password Not Match"
+    }
 
   }
 
