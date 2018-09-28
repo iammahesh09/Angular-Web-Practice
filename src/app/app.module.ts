@@ -23,6 +23,7 @@ import { MembersComponent } from './DataTable/members/members.component';
 import { AgePipe } from './Pipes/age.pipe';
 import { AddUserComponent } from './home/add-user/add-user.component';
 import { ShowUserComponent } from './home/show-user/show-user.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ShowUserComponent } from './home/show-user/show-user.component';
     AgePipe,
     AddUserComponent,
     ShowUserComponent,
+    RxjsComponent,
   ],
   imports: [
     BrowserModule,

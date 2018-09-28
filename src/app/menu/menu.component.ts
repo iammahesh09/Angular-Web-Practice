@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
 		//this._authService.isAuthenticated.subscribe(res => this.isLoggedin = res);
 
 		if (this._router.url === "/") {
-			this._router.navigate(['dashborad'])
+			this._router.navigate(['rxjs'])
 		}
 	}
 
